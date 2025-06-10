@@ -44,6 +44,38 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dolor lacus, finib
 
 #lorem(60)
 
+
+
+#figure(
+caption: "Encuentros Aleatorios",
+table(
+    columns: (auto, 1fr),
+    table.header(
+    "1d6",
+    "Descripción del Encuentro",
+    ),
+
+    "1",
+    "Un niño llorando que desaparece al acercarse, dejando huellas mojadas que conducen al cementerio",
+
+    "2",
+    "Tres figuras encapuchadas realizando un ritual alrededor de un pozo de piedra",
+
+    "3",
+    "Un comerciante que vende amuletos y talismanes, asegurando que protegen contra \"la toma\"",
+
+    "4",
+    "Milicianos locales imponiendo el estricto toque de queda con una agresividad inusual",
+
+    "5",
+    "Un ermitaño medio loco que dice haber visto adónde van los aldeanos desaparecidos",
+
+    "6",
+    "Niebla arremolinada que forma siluetas humanoides y susurra nombres olvidados",
+),
+)
+
+
 #lorem(60)
 
 

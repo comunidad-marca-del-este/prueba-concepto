@@ -65,8 +65,36 @@
     size: 12pt,
   )
 
+#show figure.where(
+    kind: table
+  ): set figure.caption(
+    position: top
+  )
+
+#show table.cell: it => {
+    if it.y == 0 {
+      strong(it)
+    } else {
+      it
+    }
+  }
+
+#show figure.where(
+    kind: table
+  ): it => {
+    show figure.caption: set text(
+      size: 1.1em,
+      font: "UnZialish",
+      hyphenate: false,
+    )
+    show figure.caption: smallcaps
+
+    align(left)[#it]
+  }
+
   #set page(columns: 2)
   #set columns(gutter: 1.2em)
+
 
   #content
 ]
