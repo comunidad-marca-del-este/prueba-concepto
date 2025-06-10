@@ -1,0 +1,71 @@
+name: Build PDF with Typst
+
+on:
+  push:
+    paths:
+      - '**.typ'
+      - '.github/workflows/**'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Typst
+        run: |
+          curl -L https://github.com/typst/typst/releases/latest/download/typst-x86_64-unknown-linux-musl.tar.xz -o typst.tar.xz
+          tar -xf typst.tar.xz
+          sudo mv typst-x86_64-unknown-linux-musl/typst /usr/local/bin
+
+      - name: Install missing fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fonts-ebgaramond fonts-cantarell fonts-croscore fonts-freefont-ttf fonts-linuxlibertine fonts-noto fonts-dejavu fonts-liberation fonts-font-awesome fonts-unifont fonts-sil-gentium fonts-lato fonts-inconsolata
+
+          # Instalar Alegreya Sans desde Google Fonts (no está en apt)
+          mkdir -p ~/.local/share/fonts
+          curl -L -o ~/.local/share/fonts/AlegreyaSans-Regular.ttf https://github.com/google/fonts/raw/main/ofl/alegreyasans/AlegreyaSans-Regular.ttf
+          curl -L -o ~/.local/share/fonts/AlegreyaSans-Bold.ttf https://github.com/google/fonts/raw/main/ofl/alegreyasans/AlegreyaSans-Bold.ttf
+
+          # Instalar Spectral SC
+          curl -L -o ~/.local/share/fonts/SpectralSC-Regular.ttf https://github.com/google/fonts/raw/main/ofl/spectralsc/SpectralSC-Regular.ttf
+
+          # Instalar Junicode
+          curl -L https://sourceforge.net/projects/junicode/files/latest/download -o junicode.zip
+          unzip junicode.zip -d junicode_fonts
+          cp junicode_fonts/*.ttf ~/.local/share/fonts/
+
+          # Instalar Bagnard (tipografía artística)
+          curl -L -o ~/.local/share/fonts/Bagnard-Regular.otf https://www.1001fonts.com/download/font/bagnard.regular.otf || true
+
+
+          # Refrescar caché de fuentes
+          fc-cache -fv
+
+      - name: List available fonts
+        run: fc-list | grep -i "alegreya\|spectral\|junicode\|bagnard"
+
+      - name: Compile Typst to PDF
+        run: typst compile prueba.typ
+
+      - name: Upload PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: prueba
+          path: prueba.pdf
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: release-${{ github.sha }}
+          name: Release for ${{ github.sha }}
+          files: prueba.pdf
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
