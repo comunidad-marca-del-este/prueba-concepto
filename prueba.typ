@@ -1,4 +1,4 @@
-#import "marca_style.typ": marca_style
+#import "marca_style.typ": marca_style, mde_box
 #show: marca_style
 
 = Prueba de concepto de Aventura elaborada distribuidamente
@@ -35,6 +35,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dolor lacus, finib
 #lorem(60)
 
 #lorem(80)
+
+#mde_box(lorem(30))
 
 #lorem(50)
 
