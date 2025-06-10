@@ -44,8 +44,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dolor lacus, finib
 
 #lorem(60)
 
-
-
 #figure(
 caption: "Encuentros Aleatorios",
 table(
@@ -75,9 +73,7 @@ table(
 ),
 )
 
-
 #lorem(60)
-
 
 #place(
  top,
@@ -85,7 +81,6 @@ table(
  float: true,
  rect(height: 30%, width: 100%, fill: black, stroke: none)
 )
-
 
 == El lugar de marras
 
@@ -120,7 +115,7 @@ table(
 #lorem(60)
 
 #place(
- bottom,
+ top,
  float: true,
  rect(height: 30%, width: 100%, fill: black)
 )
@@ -129,6 +124,3 @@ table(
 
 #lorem(80)
 
-#lorem(80)
-
-#lorem(60)
