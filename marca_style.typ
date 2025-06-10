@@ -35,10 +35,23 @@
     leading: 0.3em,
   )
 
+  #show heading.where(level: 1): it => {
+    place(
+      top,
+      scope: "parent",
+      float: true,
+      align(center, text(size: 1.1em, font: "UnZialish", it))
+    )
+  }
+
   #show heading.where(level: 2): it => {
     set block(spacing: 1em)
     it
   }
+
+  #show heading.where(level: 3): set text(
+    size: 0.9em,
+  )
 
   #set par(
     leading: 0.55em,
