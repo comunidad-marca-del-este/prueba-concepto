@@ -26,24 +26,16 @@ jobs:
       - name: Install missing fonts
         run: |
           sudo apt-get update
-          sudo apt-get install -y fonts-ebgaramond fonts-cantarell fonts-croscore fonts-freefont-ttf fonts-linuxlibertine fonts-noto fonts-dejavu fonts-liberation fonts-font-awesome fonts-unifont fonts-sil-gentium fonts-lato fonts-inconsolata
-
-          # Instalar Alegreya Sans desde Google Fonts (no está en apt)
-          mkdir -p ~/.local/share/fonts
-          curl -L -o ~/.local/share/fonts/AlegreyaSans-Regular.ttf https://github.com/google/fonts/raw/main/ofl/alegreyasans/AlegreyaSans-Regular.ttf
-          curl -L -o ~/.local/share/fonts/AlegreyaSans-Bold.ttf https://github.com/google/fonts/raw/main/ofl/alegreyasans/AlegreyaSans-Bold.ttf
-
-          # Instalar Spectral SC
-          curl -L -o ~/.local/share/fonts/SpectralSC-Regular.ttf https://github.com/google/fonts/raw/main/ofl/spectralsc/SpectralSC-Regular.ttf
 
           # Instalar Junicode
           curl -L https://sourceforge.net/projects/junicode/files/latest/download -o junicode.zip
           unzip junicode.zip -d junicode_fonts
           cp junicode_fonts/*.ttf ~/.local/share/fonts/
 
-          # Instalar Bagnard (tipografía artística)
-          curl -L -o ~/.local/share/fonts/Bagnard-Regular.otf https://www.1001fonts.com/download/font/bagnard.regular.otf || true
-
+          # Instalar Unzialishj
+          curl -L https://dl.dafont.com/dl/?f=unzialish -o unzialish.zip
+          unzip unzialish.zip -d unzialish_fonts
+          cp unzialish_fonts/*.ttf ~/.local/share/fonts/
 
           # Refrescar caché de fuentes
           fc-cache -fv
