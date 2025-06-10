@@ -1,7 +1,9 @@
 #import "marca_style.typ": marca_style
 #show: marca_style
 
- == Introducción
+= Prueba de concepto de Aventura elaborada distribuidamente
+
+== Introducción
 
 // Esto es un comentario
 // He puesto un Lorem ipsum de prueba para mostrar que aquí se puede escribir el texto que se va a mostrar
@@ -16,6 +18,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dolor lacus, finib
 
 #lorem(50)
 
+// Un recuadro negro para simular una imagen incrustada
 #place(
  bottom,
  scope: "parent",
@@ -41,10 +44,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dolor lacus, finib
 
 #lorem(60)
 
-#lorem(80)
-
-#lorem(50)
-
 
 #place(
  top,
@@ -60,15 +59,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dolor lacus, finib
 
 #lorem(60)
 
-#lorem(60)
+=== A1. Primera Sala
 
 #lorem(80)
 
 #lorem(50)
 
+=== A2. Segunda Sala
+
 #lorem(80)
 
 #lorem(60)
+
+=== A3. Tercera Sala
 
 #lorem(60)
 
