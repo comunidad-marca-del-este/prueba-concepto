@@ -42,7 +42,7 @@ jobs:
           fc-cache -fv
 
       - name: List available fonts
-        run: fc-list | grep -i "alegreya\|spectral\|junicode\|bagnard"
+        run: fc-list | grep -i "junicode\|unzialish"
 
       - name: Compile Typst to PDF
         run: typst compile prueba.typ
