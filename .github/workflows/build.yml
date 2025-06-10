@@ -26,6 +26,7 @@ jobs:
       - name: Install missing fonts
         run: |
           sudo apt-get update
+          mkdir -p ~/.local/share/fonts
 
           # Instalar Junicode
           curl -L https://sourceforge.net/projects/junicode/files/latest/download -o junicode.zip
