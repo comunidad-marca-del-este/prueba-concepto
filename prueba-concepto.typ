@@ -76,14 +76,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dolor lacus, finib
 
 #lorem(60)
 
-#place(
- top,
- scope: "parent",
- float: true,
- rect(height: 30%, width: 100%, fill: black, stroke: none)
-)
 
 == El lugar de marras
+
+#place(
+ bottom,
+ scope: "parent",
+ float: true,
+image("img/mapa-dungeon.png", width: 100%)
+)
+
 
 #lorem(80)
 
@@ -101,6 +103,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dolor lacus, finib
 
 #lorem(60)
 
+#place(
+ top,
+ scope: "parent",
+ float: true,
+ rect(height: 30%, width: 100%, fill: black, stroke: none)
+)
+
 === A3. Tercera Sala
 
 #lorem(60)
@@ -115,13 +124,15 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dolor lacus, finib
 
 #lorem(60)
 
-#place(
- top,
- float: true,
- rect(height: 30%, width: 100%, fill: black)
-)
-
 #lorem(60)
+
+#rect(height: 30%, width: 100%, fill: black)
 
 #lorem(80)
 
+
+== Licencia
+
+Este documento está licenciado bajo la licencia 
+#link("https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es")[ Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)].
+#image("img/by-nc-sa.eu.svg")
