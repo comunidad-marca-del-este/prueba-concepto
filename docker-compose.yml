@@ -1,0 +1,14 @@
+services:
+  typst:
+    build: .
+    volumes:
+      - .:/workdir
+    working_dir: /workdir
+    entrypoint: ["typst"]
+
+  watch:
+    build: .
+    volumes:
+      - .:/workdir
+    working_dir: /workdir
+    entrypoint: ["typst", "watch", "prueba-concepto.typ"]
