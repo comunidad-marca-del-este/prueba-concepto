@@ -1,3 +1,4 @@
+![La Marca del Este - Comunidad](img/marca-del-este-comunidad.png?raw=true "La marca del Este - Comunidad")
 
 ## Introducción
 
