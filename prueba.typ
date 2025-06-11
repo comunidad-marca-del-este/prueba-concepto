@@ -1,5 +1,6 @@
-#import "marca_style.typ": marca_style, mde_box
-#show: marca_style
+#import "lib/cmde_style.typ": cmde_style, 
+#import "lib/cmde_functions.typ": mde_box
+#show: cmde_style
 
 = Prueba de concepto de Aventura elaborada distribuidamente
 
