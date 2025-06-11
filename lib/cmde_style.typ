@@ -18,7 +18,7 @@
       dx: if calc.even(page) { -2.2em } else { +2.2em },
       dy: -1.5em,
       text(
-        size: 20pt,
+        size: 1.7em,
         font: "UnZialish",
         str(page))
     )
