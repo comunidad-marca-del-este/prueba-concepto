@@ -11,13 +11,13 @@ Para poder colaborar hará falta aprender un poco de la sintaxis de [Typst](http
 - [Forks en GitHub](https://docs.github.com/es/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo)
 - [Editor web de GitHubDev](https://docs.github.com/es/codespaces/the-githubdev-web-based-editor) 
 
-# Releases
+## Releases
 
 Este repositorio incluye una GitHub Action que automatiza la creación de una nueva release cada vez que se realiza un cambio en la rama principal. Esta acción genera un archivo PDF a partir del código fuente .typ utilizando Typst, y lo incluye automáticamente como artefacto en la nueva release.
 
 Puedes encontrar el PDF generado en la sección Releases del repositorio, listo para descargar tras cada actualización.
 
-# Ejecución en local
+## Ejecución en local
 
 Se puede instalar en local Typst, siguiendo las instrucciones de la herramienta, y las fuentes necesarias para compilar el PDF.
 
@@ -25,7 +25,7 @@ Se proporciona también un Dockerfile y un docker-compose.yml para generar un co
 
 Para compilar el PDF, simplemente ejecutar el comando `docker compose run --build --rm typst compile prueba-concepto.typ`. Si se quiere dejar ejecutando watch para que regenere el PDF cada vez que se modifique el archivo, se puede ejecutar `docker compose up watch`.
 
-# Siguientes pasos
+## Siguientes pasos
 
 - [ ] Mejorar estilo de tablas
 - [ ] Cubierta
