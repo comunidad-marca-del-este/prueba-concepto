@@ -45,20 +45,20 @@ jobs:
         run: fc-list | grep -i "junicode\|unzialish"
 
       - name: Compile Typst to PDF
-        run: typst compile prueba.typ
+        run: typst compile prueba-concepto.typ
 
       - name: Upload PDF
         uses: actions/upload-artifact@v4
         with:
           name: prueba
-          path: prueba.pdf
+          path: prueba-concepto.pdf
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
           tag_name: release-${{ github.sha }}
           name: Release for ${{ github.sha }}
-          files: prueba.pdf
+          files: prueba-concepto.pdf
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
