@@ -19,13 +19,13 @@
       dy: -1.5em,
       text(
         size: 1.7em,
-        font: "UnZialish",
+        font: "UnZialishALMDE",
         str(page))
     )
   })
 
   #show heading: set text(
-    font: "UnZialish",
+    font: "UnZialishALMDE",
     size: 1.5em,
     hyphenate: false,
     costs: (runt: 10000%),
@@ -40,7 +40,7 @@
       top,
       scope: "parent",
       float: true,
-      align(center, text(size: 1.1em, font: "UnZialish", it))
+      align(center, text(size: 1.1em, font: "UnZialishALMDE", it))
     )
   }
 
@@ -84,7 +84,7 @@
   ): it => {
     show figure.caption: set text(
       size: 1.1em,
-      font: "UnZialish",
+      font: "UnZialishALMDE",
       hyphenate: false,
     )
     show figure.caption: smallcaps

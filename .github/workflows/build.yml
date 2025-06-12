@@ -5,6 +5,8 @@ on:
     paths:
       - '**.typ'
       - '.github/workflows/**'
+      - 'Dockerfile'
+      - 'fonts/**'
 
 permissions:
   contents: write
@@ -17,35 +19,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install Typst
+      - name: Build custom Docker image
         run: |
-          curl -L https://github.com/typst/typst/releases/latest/download/typst-x86_64-unknown-linux-musl.tar.xz -o typst.tar.xz
-          tar -xf typst.tar.xz
-          sudo mv typst-x86_64-unknown-linux-musl/typst /usr/local/bin
+          docker build -t my-typst-image .
 
-      - name: Install missing fonts
+      - name: Compile Typst to PDF using Docker
         run: |
-          sudo apt-get update
-          mkdir -p ~/.local/share/fonts
-
-          # Instalar Junicode
-          curl -L https://sourceforge.net/projects/junicode/files/latest/download -o junicode.zip
-          unzip junicode.zip -d junicode_fonts
-          cp junicode_fonts/*.ttf ~/.local/share/fonts/
-
-          # Instalar Unzialishj
-          curl -L https://dl.dafont.com/dl/?f=unzialish -o unzialish.zip
-          unzip unzialish.zip -d unzialish_fonts
-          cp unzialish_fonts/*.ttf ~/.local/share/fonts/
-
-          # Refrescar caché de fuentes
-          fc-cache -fv
-
-      - name: List available fonts
-        run: fc-list | grep -i "junicode\|unzialish"
-
-      - name: Compile Typst to PDF
-        run: typst compile prueba-concepto.typ
+          docker run --rm \
+            -v ${{ github.workspace }}:/workdir \
+            my-typst-image compile prueba-concepto.typ
 
       - name: Upload PDF
         uses: actions/upload-artifact@v4
@@ -61,4 +43,3 @@ jobs:
           files: prueba-concepto.pdf
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
