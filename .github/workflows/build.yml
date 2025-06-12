@@ -32,7 +32,7 @@ jobs:
       - name: Upload PDF
         uses: actions/upload-artifact@v4
         with:
-          name: prueba
+          name: prueba-concepto
           path: prueba-concepto.pdf
 
       - name: Create GitHub Release
