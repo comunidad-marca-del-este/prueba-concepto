@@ -1,5 +1,5 @@
 #import "lib/cmde_style.typ": cmde_style, 
-#import "lib/cmde_functions.typ": mde_box
+#import "lib/cmde_functions.typ": cmde_box
 #show: cmde_style
 
 = Prueba de concepto de Aventura elaborada distribuidamente
@@ -37,7 +37,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dolor lacus, finib
 
 #lorem(80)
 
-#mde_box(lorem(30))
+#cmde_box(lorem(30))
 
 #lorem(50)
 
