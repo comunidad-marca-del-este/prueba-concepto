@@ -79,6 +79,32 @@
     }
   }
 
+#set table(
+  fill: (col, row) => if calc.odd(row) { gray.lighten(70%) } else { white },
+  align: (col, row) => if calc.even(col) { center } else { left },
+  inset: 0.3em, // Añade un poco de padding a las celdas
+  stroke: (x, y) => if x == 0 and y == 0 {
+    (right: (
+      paint: luma(60),
+      thickness: 0.15em,
+    ),
+    bottom: (
+      paint: luma(60),
+      thickness: 0.15em,
+    ))
+  } else if x == 0 {
+    (right: (
+      paint: luma(60),
+      thickness: 0.15em,
+    ))
+  } else if y == 0 {
+    (bottom: (
+      paint: luma(60),
+      thickness: 0.15em,
+    ))
+  }
+)
+
 #show figure.where(
     kind: table
   ): it => {
